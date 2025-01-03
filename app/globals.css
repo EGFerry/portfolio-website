@@ -28,3 +28,21 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* styles/globals.css */
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -10px; /* Adjust gutter size as needed */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 10px; /* Adjust gutter size as needed */
+  background-clip: padding-box;
+}
+
+/* Optional: Style for Masonry items */
+.my-masonry-grid_column > div {
+  margin-bottom: 10px; /* Adjust as needed for spacing between items */
+}

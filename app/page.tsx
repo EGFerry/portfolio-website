@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import MasonryGallery from "@/components/MasonryGallery";
 
 const tabs = [
   {
@@ -33,14 +34,23 @@ const tabs = [
   },
 ]
 
+const items = [
+  { id:1, image: '/nepal-ox.jpg', title: 'nepal-ox'},
+  { id:2, image: '/ely.jpg', title:'ely'},
+  { id:3, image: '/everest.jpg', title:'everest'},
+  { id:4, image: '/katahdin.jpg', title:'katahdin'},
+  { id:5, image: '/newhampshire.jpg', title:'newhampshire'},
+  { id:6, image: '/icelandrainddrop.jpg', title:'iceland'},
+]
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>Ethan Ferry</title>
+        <title>Ethan</title>
       </Head>
       <header className="flex justify-between items-center h-[90px] px-6">
-        <div className="">Ethan Ferry</div>
+        <div className="">Ethan</div>
         <Link href="#" className="rounded-3xl bg-slate-700 text-slate-50 px-3 py-2 hover:bg-opacity-90">
           Contact
         </Link>
@@ -76,11 +86,11 @@ export default function Home() {
                   </Tab>
               ))}
             </TabList>
-            <div className="max-w-7xl mx-auto w-full p-4 flex flex-col flex-grow">
-            <TabPanels className="bg-stone-200 p-2 sm:p-4 my-6 flex-grow">
-              <TabPanel>
-                Content 1
-              </TabPanel>
+
+
+            <div className="max-w-8xl mx-auto w-full p-4 flex flex-col flex-grow">
+            <TabPanels className=" p-2 sm:p-4 my-6 flex-grow">
+              <TabPanel><MasonryGallery items={items}/></TabPanel>
               <TabPanel>Content 2</TabPanel>
               <TabPanel>Content 3</TabPanel>
               <TabPanel>Content 4</TabPanel>
