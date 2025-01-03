@@ -2,6 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import MasonryGallery from "@/components/MasonryGallery";
+import { FaChevronDown } from "react-icons/fa6";
 
 const tabs = [
   {
@@ -57,12 +58,15 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col flex-grow">
-          <TabGroup className="flex flex-col flex-grow">
+          {/*<TabGroup className="flex flex-col flex-grow">*/}
+<TabGroup>
+  <div className="sticky top-0 z-50 bg-opacity-0 transition-all duration-300">
             <TabList className="flex items-center justify-center gap-14 px-6 py-4">
               {tabs.map((tab) =>
                 tab.sub ? (<div key={tab.key} className="relative group">
-                <Tab className="text-gray-500 data-[selected]:text-gray-800 hover:text-gray-800 py-2 px-4">
+                <Tab className="flex items-center text-gray-500 data-[selected]:text-gray-800 hover:text-gray-800 py-2 px-4">
                    {tab.display}
+                   <FaChevronDown className="ml-1" size={10}/>
                 </Tab>
 
                 {/* Dropdown Menu */}
@@ -86,12 +90,12 @@ export default function Home() {
                   </Tab>
               ))}
             </TabList>
+            </div>
 
-
-            <div className="max-w-8xl mx-auto w-full p-4 flex flex-col flex-grow">
-            <TabPanels className=" p-2 sm:p-4 my-6 flex-grow">
+            <div className="max-w-8xl mx-auto w-full px-4  flex flex-col flex-grow">
+            <TabPanels className=" p-2 sm:px-4 my-6 flex-grow">
               <TabPanel><MasonryGallery items={items}/></TabPanel>
-              <TabPanel>Content 2</TabPanel>
+              <TabPanel><p className="text-text hover:text-text-hover">Content 2</p></TabPanel>
               <TabPanel>Content 3</TabPanel>
               <TabPanel>Content 4</TabPanel>
             </TabPanels>
@@ -99,7 +103,7 @@ export default function Home() {
           </TabGroup>
       </main>
 
-      <footer className="h-[60px] flex justify-center items-center bg-gray-200 text-red-500">
+      <footer className="h-[60px] flex justify-center items-center text-text-dark">
        <p>Placeholder for footer</p>
       </footer>
     </div>
