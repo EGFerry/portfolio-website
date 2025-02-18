@@ -60,7 +60,7 @@ export default function Home() {
       <main className="flex flex-col flex-grow">
           {/*<TabGroup className="flex flex-col flex-grow">*/}
 <TabGroup>
-  <div className="sticky top-0 z-50 bg-slate-50 transition-all duration-300">
+  <div className="sticky top-0 z-50 bg-white transition-all duration-300">
             <TabList className="flex items-center justify-center gap-14 px-6 py-4">
               {tabs.map((tab) =>
                 tab.sub ? (<div key={tab.key} className="relative group">
